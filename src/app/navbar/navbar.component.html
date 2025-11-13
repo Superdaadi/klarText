@@ -1,0 +1,24 @@
+
+<div class="nav-background">
+    <div class="navbar">
+        <a class="logo" href="#">
+            <i class="ph ph-binoculars"></i> <p>klarText</p>
+        </a>
+
+        <div class="controls">
+            <div class="light-switch" [class.dark]="isDarkMode" (click)="toggleTheme()">
+                <i class="ph ph-sun"></i>
+                <i class="ph ph-moon-stars"></i>
+                <div class="circle"></div>
+            </div>
+
+            <div class="signIn">
+                <div class="btn signIn-btn">Anmelden</div>
+            </div>
+            
+            <div class="signUp">
+                <div class="btn signUp-btn">Einloggen</div>
+            </div>
+        </div>
+    </div>
+</div>
