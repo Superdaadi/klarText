@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 18px;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    --logo-font: "Parisienne";
+}
+
+body {
+    --primary-btn-color: #8200D2;
+    --background-color: rgb(255, 255, 241);
+    --primary-text-color: black;
+}
+
+body.darkmode {
+    --primary-btn-color: #8200D2;
+    --background-color: black;
+    --primary-text-color: white;
+}
+
