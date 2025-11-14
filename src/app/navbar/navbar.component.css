@@ -70,17 +70,18 @@
     left: 4px;
     transition: all 0.4s ease;
     border: 1px solid black;
+    transform: translateX(0px);
 }
 
 .light-switch.dark .circle {
-  transform: translateX(36px);
+    transform: translateX(36px);
 }
 
 .light-switch .ph-moon-stars {
-  color: black;
+    color: black;
 }
 .light-switch.dark .ph-sun {
-  color: white;
+    color: white;
 }
 
 
@@ -93,12 +94,17 @@
     padding: 4px 24px;
     height: 32px;
     cursor: pointer;
+    transition: all 0.05s linear;
+}
+.btn:hover {
+    transform: scale(1.02);
 }
 .signIn-btn {
-    border: 2px solid var(--primary-btn-color);
+    border: 1.5px solid var(--primary-btn-color);
     background-color: #8200d242;
 }
 .signUp-btn {
+    border: 1.5px solid black;
     background-color: var(--primary-btn-color);
     color: white;
 }

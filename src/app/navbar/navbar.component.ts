@@ -10,7 +10,7 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  isDarkMode = false;
+  public isDarkMode = true;
   private isBrowserEnv = false;
 
   constructor(
@@ -18,8 +18,8 @@ export class NavbarComponent {
     @Inject(DOCUMENT) private document: Document,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    // Determine environment once in constructor
     this.isBrowserEnv = isPlatformBrowser(this.platformId);
+    console.log(this.isDarkMode)
   }
 
   ngOnInit() {
@@ -30,6 +30,10 @@ export class NavbarComponent {
       this.isDarkMode = true;
       this.renderer.addClass(this.document.body, 'darkmode');
     }
+    else {
+      this.isDarkMode = false;
+    }
+    console.log(this.isDarkMode)
   }
 
   toggleTheme() {

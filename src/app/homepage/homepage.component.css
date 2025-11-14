@@ -46,9 +46,12 @@
   justify-content: center;
   align-items: center;
   gap: 0.4rem;
-  
+  transition: all 0.05s linear;
 }
-
+.btn-outline:hover,
+.btn-primary:hover {
+  transform: scale(1.02);
+}
 
 
 
@@ -65,7 +68,7 @@
 .btn-primary {
   background: #8200D2;
   color: white;
-  border: none;
+  border: 1.5px solid black;
 }
 
 .btn-primary:hover {
