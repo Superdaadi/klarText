@@ -101,7 +101,7 @@
 }
 .signIn-btn {
     border: 1.5px solid var(--primary-btn-color);
-    background-color: #8200d242;
+    background-color: var(--secndry-btn-color);
 }
 .signUp-btn {
     border: 1.5px solid black;
