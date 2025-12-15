@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SimplifyAiService } from './simplify-ai.service';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-simplify-ai',
   standalone: true,
@@ -24,7 +25,7 @@ export class SimplifyAiComponent {
   ]
 
   open: boolean[] = [false, false, false];
-  selectedLabel: string[] = ['Mittel', 'Aus', 'Erkennen'];
+  selectedLabel: string[] = ['Mittel', 'false', 'detect'];
 
 
   constructor(private aiService: SimplifyAiService) {}
@@ -43,8 +44,8 @@ export class SimplifyAiComponent {
     if (value === 'average') this.selectedLabel[type] = 'Mittel';
     if (value === 'heavy') this.selectedLabel[type] = 'Stark';
 
-    if (value === 'off') this.selectedLabel[type] = 'Aus';    
-    if (value === 'on') this.selectedLabel[type] = 'An';
+    if (value === 'off') this.selectedLabel[type] = 'false';    
+    if (value === 'on') this.selectedLabel[type] = 'true';
 
     if (type === 2) this.selectedLabel[type] = value;
   }
@@ -76,9 +77,14 @@ export class SimplifyAiComponent {
 
     console.log(this.message)
 
-    this.aiService.SendRequest(this.message).subscribe({
+    this.aiService.SendSimplifyRequest(
+      this.message,
+      this.selectedLabel[0].toLowerCase(),
+      this.selectedLabel[1],
+      this.selectedLabel[2],
+    ).subscribe({
       next: result => {
-        this.message = result;
+        this.message = result.toString();
         console.log(this.message)
         this.loading = false;
       },

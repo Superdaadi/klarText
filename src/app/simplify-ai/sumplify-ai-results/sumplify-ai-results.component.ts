@@ -1,26 +1,37 @@
 import { Component } from '@angular/core';
 
-import data from '../../data/request.json'
+
+
+import { SentenceItem } from '../simplify-ai.model';
+import data from '../../../data/request.json'
+import { BoldTextPipe } from '../../../pipes/bold-text.pipe';
+
+
+
 
 @Component({
   selector: 'app-sumplify-ai-results',
   standalone: true,
-  imports: [],
+  imports: [BoldTextPipe],
   templateUrl: './sumplify-ai-results.component.html',
   styleUrl: './sumplify-ai-results.component.css'
 })
+
+
+
 export class SumplifyAiResultsComponent {
   
-  protected content: string[] = []
+  protected data: SentenceItem[] = data as SentenceItem[];
+
 
 
 
   constructor() {}
 
 
-  getData() {
-    this.content[0] = data.te.simplifyed
-  }
+
+
+
 
 
 }

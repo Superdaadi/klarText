@@ -1,7 +1,7 @@
-{
-    "te": {
+[
+    {
         "splittedSentence": "Obwohl widersprüchliche **Interessen** unter Druck standen, entstand aus Unsicherheit eine **Dynamik**, die **nachhaltige** Veränderung ermöglichte.",
-        "simplifyed": "Es gab verschiedene Meinungen und viel Druck. Am Anfang waren viele unsicher. Dann entstand eine Bewegung. Am Ende konnte sich etwas dauerhaft verbessern.",
+        "simplified": "Es gab verschiedene Meinungen und viel Druck. Am Anfang waren viele unsicher. Dann entstand eine Bewegung. Am Ende konnte sich etwas dauerhaft verbessern.",
         "wordExpl": [
             {
                 "word": "Interessen",
@@ -12,12 +12,63 @@
                 "expl": "Bewegung"
             },
             {
-                "word": "nachhaltig",
+                "word": "nachhaltige",
                 "expl": "langfristig gut"
             }
         ]
     },
-    "st": {
-
+    {
+        "splittedSentence": "Trotz anfänglicher **Skepsis** gegenüber der neuen Methode gelang es dem Team, durch **Zusammenarbeit** und **Kreativität** bemerkenswerte Ergebnisse zu erzielen.",
+        "simplified": "Am Anfang waren viele unsicher wegen der neuen Methode. Das Team arbeitete gut zusammen und nutzte neue Ideen. So erzielten sie gute Ergebnisse.",
+        "wordExpl": [
+            {
+                "word": "Skepsis",
+                "expl": "Unsicherheit"
+            },
+            {
+                "word": "Zusammenarbeit",
+                "expl": "gemeinsames Arbeiten"
+            },
+            {
+                "word": "Kreativität",
+                "expl": "neue Ideen"
+            }
+        ]
+    },
+    {
+        "splittedSentence": "Die **komplexen** Zusammenhänge der Wirtschaft erforderten eine sorgfältige **Analyse**, bevor man fundierte **Entscheidungen** treffen konnte.",
+        "simplified": "Die Wirtschaft war schwierig zu verstehen. Man musste alles genau prüfen, bevor man richtige Entscheidungen traf.",
+        "wordExpl": [
+            {
+                "word": "komplexen",
+                "expl": "schwierig"
+            },
+            {
+                "word": "Analyse",
+                "expl": "Prüfung"
+            },
+            {
+                "word": "Entscheidungen",
+                "expl": "Wahlmöglichkeiten"
+            }
+        ]
+    },
+    {
+        "splittedSentence": "Durch die **beharrliche** Arbeit aller Beteiligten konnte ein **nachhaltiger** Erfolg erzielt werden, der langfristig positive **Auswirkungen** hatte.",
+        "simplified": "Alle arbeiteten hart. So gelang ein dauerhafter Erfolg. Er hatte lange positive Folgen.",
+        "wordExpl": [
+            {
+                "word": "beharrliche",
+                "expl": "hartnäckige"
+            },
+            {
+                "word": "nachhaltiger",
+                "expl": "dauerhafter"
+            },
+            {
+                "word": "Auswirkungen",
+                "expl": "Folgen"
+            }
+        ]
     }
-}
+]

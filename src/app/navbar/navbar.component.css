@@ -1,6 +1,6 @@
 
 .nav-background {
-    background-color: var(--background-color);
+    background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
     display: flex;
     justify-content: center;
