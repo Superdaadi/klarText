@@ -1,0 +1,23 @@
+{
+    "te": {
+        "splittedSentence": "Obwohl widersprüchliche **Interessen** unter Druck standen, entstand aus Unsicherheit eine **Dynamik**, die **nachhaltige** Veränderung ermöglichte.",
+        "simplifyed": "Es gab verschiedene Meinungen und viel Druck. Am Anfang waren viele unsicher. Dann entstand eine Bewegung. Am Ende konnte sich etwas dauerhaft verbessern.",
+        "wordExpl": [
+            {
+                "word": "Interessen",
+                "expl": "Meinungen"
+            },
+            {
+                "word": "Dynamik",
+                "expl": "Bewegung"
+            },
+            {
+                "word": "nachhaltig",
+                "expl": "langfristig gut"
+            }
+        ]
+    },
+    "st": {
+
+    }
+}
