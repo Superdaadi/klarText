@@ -5,20 +5,84 @@
     margin: 0;
     font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
     font-size: 18px;
-    background-color: var(--background-color);
     color: var(--primary-text-color);
     --logo-font: "Parisienne";
+    background: none;
 }
 
 body {
     --primary-btn-color: #8200D2;
-    --background-color: rgb(255, 255, 241);
+
+    --primary-bg-color: rgb(255, 255, 241);
+    --secondary-bg-color: #e7e7e7;
+    
     --primary-text-color: black;
 }
 
 body.darkmode {
     --primary-btn-color: #8200D2;
-    --background-color: black;
+    --secndry-btn-color: #8200d242;
+
+    --primary-bg-color: black;
+    --secondary-bg-color: #0F0F0F;
+
     --primary-text-color: white;
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.boldText {
+  font-weight: bold;
+  color: red;
+}
+
+/* Tooltip Wort */
+.tooltip-word {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: underline dotted;
+}
+
+/* Tooltip Box */
+.tooltip-box {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+}
+
+/* Hover-Effekt */
+.tooltip-word:hover .tooltip-box {
+  opacity: 1;
+}
+
+
+
+
+
+
 

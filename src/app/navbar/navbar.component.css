@@ -1,6 +1,6 @@
 
 .nav-background {
-    background-color: var(--background-color);
+    background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
     display: flex;
     justify-content: center;
@@ -101,7 +101,7 @@
 }
 .signIn-btn {
     border: 1.5px solid var(--primary-btn-color);
-    background-color: #8200d242;
+    background-color: var(--secndry-btn-color);
 }
 .signUp-btn {
     border: 1.5px solid black;

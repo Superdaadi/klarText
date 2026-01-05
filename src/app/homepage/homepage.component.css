@@ -1,5 +1,6 @@
 .hero {
   width: 100%;
+  min-height: 60rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@
   gap: 3rem;
   text-align: center;
   position: relative;
+  background-color: var(--primary-bg-color);
 }
 
 .logo {

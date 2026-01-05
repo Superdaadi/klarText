@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-selection',
@@ -9,8 +10,13 @@ import { Component } from '@angular/core';
 })
 export class SelectionComponent {
 
+  constructor(private router: Router) {
+
+  }
+
   goToAi() {
     console.log('Navigating to simplifier…');
+    this.router.navigate(['/simplify-ai'])
     // Router logic (optional)
   }
 

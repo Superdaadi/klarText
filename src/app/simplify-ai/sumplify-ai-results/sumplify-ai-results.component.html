@@ -1,0 +1,33 @@
+<div class="full-bg">
+    <div class="border">
+
+        <div class="input">
+            Eingabe
+            <div class="text-component">
+                @for(item of data; track item) {
+                    <p
+                        [innerHTML]="item.splittedSentence | richText : item.wordExpl">
+                    </p>
+                    <br>
+                }
+            </div>
+        </div>
+
+
+
+        <div class="output">
+            Ausgabe
+            <div class="text-component">
+
+                @for(i of data; track i) {
+                    <p>{{ i.simplified }}</p><br>
+                }
+
+                
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
