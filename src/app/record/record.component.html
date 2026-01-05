@@ -1,0 +1,54 @@
+
+
+<div class="full-bg">
+    <div class="audio-container">
+        <h2>Audio Recorder</h2>
+
+        <button 
+            (click)="startRecording()" 
+            [disabled]="isRecording" 
+            class="record-button">
+            Start Recording
+        </button>
+        
+        <button 
+            (click)="stopRecording()" 
+            [disabled]="!isRecording" 
+            class="stop-button">
+            Stop Recording
+        </button>
+
+        @if (isRecording) {
+            <p>🔴 Recording...</p>
+        }
+
+        @if (audioUrl) {
+            <div>
+                <h3>Recorded Audio</h3>
+                <audio controls [src]="audioUrl"></audio>
+                
+                <button 
+                    (click)="sendAudio()" 
+                    class="send-button">
+                    Send Audio to Backend
+                </button>
+                
+                <button 
+                    (click)="resetRecorder()" 
+                    class="reset-button">
+                    Discard
+                </button>
+            </div>
+        }
+        
+    </div>
+
+    
+</div>
+
+
+
+
+
+
+

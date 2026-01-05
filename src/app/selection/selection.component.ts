@@ -20,9 +20,8 @@ export class SelectionComponent {
     // Router logic (optional)
   }
 
-  record() {
-    console.log('Recording speech…');
-    // Microphone logic (optional)
+  navigate(url: string) {
+    this.router.navigate([url])
   }
   
 }
