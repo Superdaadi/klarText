@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-selection',
@@ -9,14 +10,12 @@ import { Component } from '@angular/core';
 })
 export class SelectionComponent {
 
-  goToAi() {
-    console.log('Navigating to simplifier…');
-    // Router logic (optional)
-  }
+  constructor(private router: Router) {}
 
-  record() {
-    console.log('Recording speech…');
-    // Microphone logic (optional)
+
+
+  navigate(url: string) {
+    this.router.navigate([url])
   }
   
 }
