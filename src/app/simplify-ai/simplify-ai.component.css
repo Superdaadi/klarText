@@ -1,0 +1,180 @@
+.full-bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.border {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1620px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+
+.input, .output {
+    width: 49%;
+    height: 75%;
+    margin: 12px;
+    margin-top: 6px;
+    font-size: 1.4em;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+
+.text-component {
+    margin-top: 1rem;
+    width: calc(100% - 52px);
+    padding: 24px;
+    height: 100%;
+    background-color: var(--secondary-bg-color);
+    border: 3px solid #3A3A3A;
+    border-radius: 20px;
+}
+
+.text-component > textarea {
+    resize: none
+}
+
+
+.chat-input {
+  width: calc(100% - 28px);
+  height: calc(100% - 28px);
+  padding: 14px;
+  border-radius: 14px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 16px;
+  outline: none;
+  transition: 
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Focus state */
+.chat-input:focus {
+  border: none;
+}
+
+.chat-input:focus::placeholder {
+  opacity: 0.6;
+}
+
+/* Optional hover */
+.chat-input:hover {
+  border-color: #3a3a40;
+}
+
+
+
+
+.output > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sub_selection_comp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sel_text {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-left: 5rem;
+}
+
+.sel-btn {
+    position: relative;
+    width: 12rem;
+    margin-right: 5rem;
+}
+
+.sel-btn button {
+    width: 100%;
+    height: 2.5rem;
+    background: var(--secndry-btn-color);
+    color: var(--primary-text-color);
+    border: 2px solid var(--primary-btn-color);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.sel-arrow {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    right: 8px;
+    transition: trasform 0.2 ease;
+}
+
+.sel-btn button.open .sel-arrow {
+    transform: rotate(180deg);
+}
+
+
+.sel-btn ul {
+    position: absolute;
+    width: 90%;
+    margin-left: 5%;
+    background: black;
+    border-radius: 12px;
+    margin-top: 4px;
+    padding: 0;
+    list-style: none;
+    z-index: 5;
+    opacity: 90%;
+}
+
+.sel-btn li {
+    padding: 0.7rem;
+    color: white;
+    cursor: pointer;
+}
+
+.sel-btn li:hover {
+    background: #222;
+    border-radius: 12px;
+}
+
+
+
+
+.ai-btn {
+    width: 120px;
+    height: 120px;
+    background-color: var(--primary-btn-color);
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.ai-btn:hover {
+    transform: scale(1.02);
+}
+
+.ai-btn > svg {
+    width: 60%;
+}
+
+
+
+
+

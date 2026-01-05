@@ -10,9 +10,15 @@ import { Router } from '@angular/router';
 })
 export class SelectionComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
 
+  }
 
+  goToAi() {
+    console.log('Navigating to simplifier…');
+    this.router.navigate(['/simplify-ai'])
+    // Router logic (optional)
+  }
 
   navigate(url: string) {
     this.router.navigate([url])
