@@ -4,15 +4,9 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retryWhen } from 'rxjs/operators';
 import { filter, switchMap, map, tap } from 'rxjs/operators';
 
+import { ResponseDataService } from '../../service/responseData.service';
+import { Sentence } from '../../service/responseData.model';
 
-export interface SimplifiedSentence {
-  splittedSentence: string;
-  simplifyed: string;
-  wordExpl: {
-    word: string;
-    expl: string;
-  }[];
-}
 
 
 
@@ -28,7 +22,7 @@ export class SimplifyAiService {
     private apiUrl = 'http://localhost:3000';
     
     
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private responseDataService: ResponseDataService) {}
 
 
     public SendRequest(content: string): Observable<string> {
@@ -52,7 +46,7 @@ export class SimplifyAiService {
         simplified: string,
         keypoints: string,
         language: string
-    ): Observable<SimplifiedSentence[]> {
+    ): Observable<Sentence[]> {
 
         const payload = {
             text: content,
@@ -65,13 +59,15 @@ export class SimplifyAiService {
 
 
         return this.http
-            .post<SimplifiedSentence[]>(
-            `${this.apiUrl}/simplify/generateSimplifyResponse`,
-            payload // ✅ KEIN { prompt: payload }
+            .post<Sentence[]>(
+                `${this.apiUrl}/simplify/generateSimplifyResponse`,
+                payload
             )
             .pipe(
             tap(response => {
                 console.log('RAW AI RESPONSE', response);
+
+                this.responseDataService.storeData(response);
             }),
             map(response => {
                 // Optional: Validierung
@@ -86,24 +82,10 @@ export class SimplifyAiService {
             })
         );
 
-        /*return this.http
-        .post<{ result: string }>(`${this.apiUrl}/simplify/generateSimplifyResponse`, { prompt: payload })
-        .pipe(
-            map(response => {
-                console.log(response.result);
-                return response.result;
-            }),
-            catchError(error => {
-            console.error('AI request failed', error);
-            return throwError(() => error);
-            })
-        );*/
     }
 
 
-
-
-
-
-
 }
+
+
+

@@ -58,7 +58,7 @@ export class SimplifyAiComponent {
 
 
 
-  message = 'Was ist Jugend Forscht?';
+  message = 'Düsseldorf. Der US-Elektroautobauer Tesla hat die Batterieproduktion in seiner Gigafabrik in Grünheide wieder aufgenommen. „Wir haben jede Menge investiert – in neue Technologie, viel in Anlagentechnik“, sagte Werksleiter André Thierig bei einem internen Event am Dienstag. Grünheide sei nun die „hochautomatisierteste Batteriefabrik von Tesla weltweit“. Tesla hatte in Grünheide bereits zuvor Batterien gefertigt. Nach Angaben von Werksleiter Thierig produzierten die Mitarbeiter rund 100.000 Einheiten eines älteren Batterietyps. Anschließend baute der Konzern die Fertigung um und schuf so die Voraussetzungen für einen neuen Batterietyp. Intern firmiert das Vorhaben unter dem Codenamen „Projekt Coyote“. Das Besondere daran sei, dass in den Batterien Zellen zum Einsatz kämen, die Tesla selbst produziert habe, sagte Thierig. Die Zellfertigung finde allerdings „noch nicht“ in Grünheide statt. „Die kommen aus dem Schwesterwerk in Austin“, sagte der Werksleiter. „Also, wir bekommen die Batteriezellen hier nach Berlin geliefert und verbauen sie dann in Batteriepacks.“ Bald würden sie auch in Fahrzeugen aus Grünheide verbaut werden.';
 
 
 
