@@ -10,7 +10,7 @@ import { RecordService } from './record.service';
 })
 export class RecordComponent {
 
-  isRecording: boolean = false;
+  protected isRecording: boolean = false;
   mediaRecorder: MediaRecorder | null = null;
   audioChunks: Blob[] = [];
   audioBlob: Blob | null = null;
