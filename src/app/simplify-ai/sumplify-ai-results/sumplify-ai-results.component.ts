@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
-
-
+import { Sentence } from './../../../service/responseData.model';
 import { SentenceItem } from '../simplify-ai.model';
 import data from '../../../data/request.json'
+import data2 from '../../../data/teset.json'
 import { BoldTextPipe } from '../../../pipes/bold-text.pipe';
+import { ResponseDataService } from '../../../service/responseData.service';
+
 
 
 
@@ -21,12 +23,16 @@ import { BoldTextPipe } from '../../../pipes/bold-text.pipe';
 
 export class SumplifyAiResultsComponent {
   
-  protected data: SentenceItem[] = data as SentenceItem[];
+  protected dataOLD: SentenceItem[] = data2 as SentenceItem[];
+
+  protected data: Sentence[];
 
 
 
 
-  constructor() {}
+  constructor(private responseDataService: ResponseDataService) {
+    this.data = this.responseDataService.getStoredData()
+  }
 
 
 
