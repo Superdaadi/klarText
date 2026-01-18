@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { WordExpl } from './bold-text.model';
+import { WordExpl } from '../service/responseData.model';
 
 
 @Pipe({
@@ -18,23 +18,17 @@ export class BoldTextPipe implements PipeTransform {
 
     let result = text;
 
-    // 1️⃣ **Text** → bold
-    result = result.replace(
-      /\*\*(.*?)\*\*/g,
-      '<strong class="boldText">$1</strong>'
-    );
-
     // 2️⃣ Wörter → Tooltip
     if (wordExpl?.length) {
-      wordExpl.forEach(({ word, expl }) => {
+      wordExpl.forEach(({ word, explanation }) => {
         const escapedWord = this.escapeRegex(word);
         const regex = new RegExp(`\\b(${escapedWord})\\b`, 'gi');
 
         result = result.replace(
           regex,
-          `<span class="tooltip-word">
+          `<span class="tooltip-word boldText">
              $1
-             <span class="tooltip-box">${expl}</span>
+             <span class="tooltip-box">${explanation}</span>
            </span>`
         );
       });

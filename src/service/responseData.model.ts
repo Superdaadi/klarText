@@ -1,17 +1,16 @@
 
 
-
-
-export interface Sentence {
+export interface SimplifiedText {
     inputText: string;
     simplified: string;
     wordExpl: WordExpl[];
 }
 
-
 export interface WordExpl {
     word: string;
-    expl: string;
+    explanation: string;
 }
+
+
 
 

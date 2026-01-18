@@ -1,33 +1,24 @@
 <div class="full-bg">
     <div class="border">
-
-        <div class="input">
-            Eingabe
-            <div class="text-component">
-                @for(item of data; track item) {
-                    <p
-                        [innerHTML]="item.inputText | richText : item.wordExpl">
-                    </p>
-                    <br>
-                }
+        @if(data) {
+            
+            <div class="input">
+                Eingabe
+                <div class="text-component">
+                    <p [innerHTML]="data.inputText | richText : data.wordExpl"></p>
+                </div>
             </div>
-        </div>
 
-
-
-        <div class="output">
-            Ausgabe
-            <div class="text-component">
-
-                @for(i of data; track i) {
-                    <p>{{ i.simplified }}</p><br>
-                }
-
-                
-
+            <div class="output">
+                Ausgabe
+                <div class="text-component">
+                    <p>{{ data.simplified }}</p>
+                </div>
             </div>
-        </div>
 
-
+        }
+        @else {
+            <p>Keine Daten vorhanden. Bitte Text neu generieren.</p>
+        }
     </div>
 </div>

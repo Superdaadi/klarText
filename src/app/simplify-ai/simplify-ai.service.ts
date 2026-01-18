@@ -5,7 +5,7 @@ import { catchError, retryWhen } from 'rxjs/operators';
 import { filter, switchMap, map, tap } from 'rxjs/operators';
 
 import { ResponseDataService } from '../../service/responseData.service';
-import { Sentence } from '../../service/responseData.model';
+import { SimplifiedText } from '../../service/responseData.model';
 import { Router } from '@angular/router';
 
 
@@ -28,7 +28,7 @@ export class SimplifyAiService {
 
     public SendRequest(content: string): Observable<string> {
         return this.http
-        .post<{ result: string }>(`${this.apiUrl}/simplify/generateAIResponse`, { prompt: content })
+        .post<{ result: string }>(`${this.apiUrl}/simplify/generateSimplifyResponse`, { prompt: content })
         .pipe(
             map(response => response.result),
             catchError(error => {
@@ -46,44 +46,34 @@ export class SimplifyAiService {
         content: string,
         simplified: string,
         keypoints: string,
-        language: string
-    ): Observable<Sentence[]> {
+        lang: string
+    ): Observable<SimplifiedText> {
 
         const payload = {
             text: content,
-            simplified,
-            keypoints,
-            language
+            lang
         };
 
         console.log(payload)
 
 
         return this.http
-            .post<Sentence[]>(
+            .post<SimplifiedText>( // Hier Text statt Sentence[], falls die API ein Objekt liefert
                 `${this.apiUrl}/simplify/generateSimplifyResponse`,
                 payload
             )
             .pipe(
-            tap(response => {
-                console.log('RAW AI RESPONSE', response);
-
-                this.responseDataService.storeData(response);
-
-                this.router.navigate(['/simplify-ai-result']);
-            }),
-            map(response => {
-                // Optional: Validierung
-                if (!Array.isArray(response)) {
-                throw new Error('Invalid AI response format');
-                }
-                return response;
-            }),
-            catchError(error => {
-                console.error('AI request failed', error);
-                return throwError(() => error);
-            })
-        );
+                tap(response => {
+                    console.log('RAW AI RESPONSE', response);
+                    // Falls die API ein Array schickt, hier response[0] nutzen
+                    this.responseDataService.storeData(response); 
+                    this.router.navigate(['/simplify-ai-result']);
+                }),
+                catchError(error => {
+                    console.error('AI request failed', error);
+                    return throwError(() => error);
+                })
+            );
 
     }
 
