@@ -6,7 +6,7 @@
             <div class="text-component">
                 @for(item of data; track item) {
                     <p
-                        [innerHTML]="item.splittedSentence | richText : item.wordExpl">
+                        [innerHTML]="item.inputText | richText : item.wordExpl">
                     </p>
                     <br>
                 }

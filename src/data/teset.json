@@ -1,0 +1,114 @@
+[
+  {
+    "inputText": "Düsseldorf.",
+    "simplified": "Düsseldorf",
+    "wordExpl": [
+      {
+        "word": "Düsseldorf",
+        "expl": "Die Hauptstadt des Bundeslandes Nordrhein-Westfalen in Deutschland"
+      },
+      {
+        "word": "Bundesland",
+        "expl": "Ein Bundesstaat innerhalb Deutschlands"
+      }
+    ]
+  },
+  {
+    "inputText": "Der US-Elektroautobauer Tesla hat die Batterieproduktion in seiner Gigafabrik in Grünheide wieder aufgenommen.",
+    "simplified": "Tesla wieder Batterien produziert in seiner Gigafabrik in Grünheide",
+    "wordExpl": [
+      {
+        "word": "Elektroautobauer",
+        "expl": "Automobilhersteller, der Elektrofahrzeuge herstellt"
+      },
+      {
+        "word": "Batterieproduktion",
+        "expl": "Herstellung von Batterien"
+      }
+    ]
+  },
+  {
+    "inputText": "Tesla hatte in Grünheide bereits zuvor **Batterien** gefertigt",
+    "simplified": "Tesla hat in Grünheide bereits Batterien hergestellt.",
+    "wordExpl": [
+      {
+        "word": "Batterien",
+        "expl": "Elektronische Speichermedien"
+      },
+      {
+        "word": "Grünheide",
+        "expl": "Ein Ort im Norden Deutschlands, wo es Wald und Feld gibt."
+      }
+    ]
+  },
+  {
+    "inputText": "Nach Angaben von Werksleiter Thierig produzierten die Mitarbeiter rund 100.",
+    "simplified": "Die Anzahl der Mitarbeiter beträgt 100.",
+    "wordExpl": [
+      {
+        "word": "Anlagen",
+        "expl": "Ein Plattenformat für Musik."
+      },
+      {
+        "word": "Mitarbeiter",
+        "expl": "Personen, die an einem Projekt arbeiten."
+      }
+    ]
+  },
+  {
+    "inputText": "Die **welt** ist voller **Dinge**",
+    "simplified": "Die Welt ist voller Dinge",
+    "wordExpl": [
+      {
+        "word": "welt",
+        "expl": "Die Welt ist ein großes, vielfältiges Gebiet"
+      },
+      {
+        "word": "Dinge",
+        "expl": "Dinge sind kleine oder große Objekte oder Ereignisse"
+      }
+    ]
+  },
+  {
+    "inputText": "Einheiten eines älteren Batterietyps.",
+    "simplified": "Einer Zehntel eines Kilometers",
+    "wordExpl": [
+      {
+        "word": "Einheiten",
+        "expl": "Wort, das sich auf verschiedene Größen bezieht"
+      },
+      {
+        "word": "Zehntel",
+        "expl": "Schnellwort für Zehn"
+      }
+    ]
+  },
+  {
+    "inputText": "Anschließend baute der Konzern die Fertigung um und schuf so die Voraussetzungen für einen neuen Batterietyp.",
+    "simplified": "Der Konzern baute die Fertigung um und schuf die Voraussetzungen für ein neues Batterietyp.",
+    "wordExpl": [
+      {
+        "word": "Anschließend",
+        "expl": "wächst schnell"
+      },
+      {
+        "word": "baute",
+        "expl": "baut"
+      }
+    ]
+  },
+  {
+    "inputText": "Intern firmiert das Vorhaben unter dem Codenamen Projekt Coyote.",
+    "simplified": "Das Unternehmen betreibt die Aufgabe unter dem Namen Projekt Coyote.",
+    "wordExpl": [
+      {
+        "word": "firmiert",
+        "expl": "Die Firma bestätigt etwas."
+      },
+      {
+        "word": "unter",
+        "expl": "Unterhalb von."
+      }
+    ]
+  }
+]

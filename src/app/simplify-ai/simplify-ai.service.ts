@@ -6,6 +6,7 @@ import { filter, switchMap, map, tap } from 'rxjs/operators';
 
 import { ResponseDataService } from '../../service/responseData.service';
 import { Sentence } from '../../service/responseData.model';
+import { Router } from '@angular/router';
 
 
 
@@ -22,7 +23,7 @@ export class SimplifyAiService {
     private apiUrl = 'http://localhost:3000';
     
     
-    constructor(private http: HttpClient, private responseDataService: ResponseDataService) {}
+    constructor(private http: HttpClient, private responseDataService: ResponseDataService, private router: Router) {}
 
 
     public SendRequest(content: string): Observable<string> {
@@ -68,6 +69,8 @@ export class SimplifyAiService {
                 console.log('RAW AI RESPONSE', response);
 
                 this.responseDataService.storeData(response);
+
+                this.router.navigate(['/simplify-ai-result']);
             }),
             map(response => {
                 // Optional: Validierung

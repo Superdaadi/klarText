@@ -9,6 +9,8 @@ import { RecordService } from './record.service';
   styleUrl: './record.component.css'
 })
 export class RecordComponent {
+
+  protected isRecording: boolean = false;
   mediaRecorder: MediaRecorder | null = null;
   audioChunks: Blob[] = [];
   audioBlob: Blob | null = null;

@@ -3,9 +3,9 @@
 
 
 export interface Sentence {
-    splittedSentence: string;
+    inputText: string;
     simplified: string;
-    wordExpl: WordExpl[] | null;
+    wordExpl: WordExpl[];
 }
 
 

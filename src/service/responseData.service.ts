@@ -12,14 +12,18 @@ import { Observable } from 'rxjs';
 export class ResponseDataService {
   
   
-    public responseData: Sentence[] = []
+    private responseData: Sentence[] = []
 
 
     public storeData(response: Sentence[]) {
-        this.responseData = response
-        console.log('DATA STORED!' + this.responseData)
+      this.responseData = response
+      console.log('DATA STORED!' + this.responseData)
     }
 
+    public getStoredData(): Sentence[]
+    {
+      return this.responseData
+    }
 
 
 
