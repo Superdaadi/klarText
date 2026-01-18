@@ -72,3 +72,193 @@
   justify-content: space-evenly;
   padding-top: 8rem;
 }
+
+
+.audio-container {
+  display: flex;
+  height: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.audio-controls{
+  position: relative;
+  width: 320px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.audio-controls > button {
+  width: 128px;
+  height: 128px;
+  border: none;
+  border-radius: 100%;
+  padding: 8px;
+  background-color: var(--primary-btn-color);
+  cursor: pointer;
+  transition: all 0.05s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(255, 255, 255, 0.4) 2px 2px 30px;
+  
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  border-radius: 100%;
+  border: none;
+  background-color: var(--primary-btn-color);
+  cursor: pointer;
+
+  opacity: 0;
+  transform: scale(0.4);
+  pointer-events: none;
+
+  transition:
+    transform 0.35s cubic-bezier(.2,.9,.2,1),
+    opacity 0.25s ease,
+    box-shadow 0.2s ease;
+}
+.audio-controls > button:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(255, 255, 255, 0.7) 2px 2px 30px;
+}
+
+.audio-controls:not(.recording) .record-btn {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+.audio-controls.recording.paused .resume-btn {
+  opacity: 1;
+  transform: translateX(-140px) scale(1);
+  pointer-events: auto;
+}
+.audio-controls.recording:not(.paused) .pause-btn {
+  opacity: 1;
+  transform: translateX(-140px) scale(1);
+  pointer-events: auto;
+}
+.audio-controls.recording .stop-btn {
+  opacity: 1;
+  transform: translateX(140px) scale(1);
+  pointer-events: auto;
+}
+
+
+
+
+
+
+
+
+.record-if {
+  width: 120px;
+  height: 120px;
+  border: none;
+  border-radius: 100%;
+  background-color: var(--primary-bg-color);
+  border: 3px solid var(--primary-btn-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(255, 255, 255, 0.4) 2px 2px 30px;
+  z-index: 12;
+}
+
+.record-if-inner {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 100%;
+  padding: 8px;
+  background-color: var(--secndry-btn-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.rec-txt {
+  height: 20px;
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-bottom: 4px;
+}
+.rec-dot {
+  background-color: red;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+}
+.rec-dots {
+  height: 20px;
+  display: flex;
+  gap: 4px;
+}
+
+.rec-dotw {
+  background-color: white;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  animation: hop 1.2s ease-in-out infinite;
+}
+
+.rec-dotw.paused {
+  animation-play-state: paused;
+}
+
+/* Stagger the hops */
+.rec-dotw:nth-child(1) { animation-delay: 0s; }
+.rec-dotw:nth-child(2) { animation-delay: 0.15s; }
+.rec-dotw:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes hop {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  40% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+
+
+
+
+.player-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.btn {
+  width: 54px;
+  height: 54px;
+  border: none;
+  border-radius: 100%;
+  padding: 8px;
+  background-color: var(--primary-btn-color);
+  cursor: pointer;
+  transition: all 0.05s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(255, 255, 255, 0.4) 2px 2px 30px;
+}
+
+
+
+
+
