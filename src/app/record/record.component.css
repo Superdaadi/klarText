@@ -204,7 +204,7 @@
 }
 
 .rec-dotw {
-  background-color: white;
+  background-color: var(--primary-text-color);
   width: 12px;
   height: 12px;
   border-radius: 100%;

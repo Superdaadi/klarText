@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { SimplifyAiService } from './simplify-ai.service';
 import { FormsModule } from '@angular/forms';
+import { AiLoaderComponent } from './ai-loader/ai-loader.component';
 
 
 @Component({
   selector: 'app-simplify-ai',
   standalone: true,
   imports: [
+    AiLoaderComponent,
     CommonModule,
     HttpClientModule,
     FormsModule
@@ -17,6 +19,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './simplify-ai.component.css'
 })
 export class SimplifyAiComponent {
+
+  protected loading: boolean = false
 
   languages: string[] = [
     'Deutsch',
@@ -63,9 +67,7 @@ export class SimplifyAiComponent {
   message = 'Düsseldorf. Der US-Elektroautobauer Tesla hat die Batterieproduktion in seiner Gigafabrik in Grünheide wieder aufgenommen. Tesla hatte in Grünheide bereits zuvor Batterien gefertigt. Nach Angaben von Werksleiter Thierig produzierten die Mitarbeiter rund 100.000 Einheiten eines älteren Batterietyps. Anschließend baute der Konzern die Fertigung um und schuf so die Voraussetzungen für einen neuen Batterietyp. Intern firmiert das Vorhaben unter dem Codenamen „Projekt Coyote“.' 
 
 
-  prompt = 'Was ist Jugend Forscht?';
   response = '';
-  loading = false;
 
 
   send() {
