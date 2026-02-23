@@ -22,6 +22,8 @@ export interface Metadata {
 
 export interface PronunciationFeedback {
   headline: string;
+  text: string;
+  date: string;
   summary: string;
   overall_score: number;
   grade: string;

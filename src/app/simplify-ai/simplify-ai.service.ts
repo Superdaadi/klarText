@@ -20,7 +20,7 @@ import { Router } from '@angular/router';
 
 export class SimplifyAiService {
 
-    private apiUrl = 'http://localhost:3000';
+    private apiUrl = 'https://192.168.2.84:3000';
     
     
     constructor(private http: HttpClient, private responseDataService: ResponseDataService, private router: Router) {}

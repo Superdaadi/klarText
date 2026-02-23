@@ -46,6 +46,16 @@ export class PronunciationFeedbackComponent {
         next: (data: PronunciationFeedback) => {
           console.log("Das ist die Data: " + data)
           this.data = data;
+          if (data.date) {
+            const dateObj = new Date(data.date);
+            this.data.date = dateObj.toLocaleString('de-DE', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+              hour: '2-digit',
+              minute: '2-digit'
+            });
+          }
           this.loading = false;
           this.cdr.detectChanges();
         },

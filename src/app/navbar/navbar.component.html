@@ -1,11 +1,18 @@
 
-<div class="nav-background">
+<div class="nav-background" #navbarWrapper> 
     <div class="navbar">
+        
+        <div class="burger" (click)="toggleMenu()" [class.active]="isMenuOpen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
         <a class="logo" href="#">
             <i class="ph ph-binoculars"></i> <p>klarText</p>
         </a>
 
-        <div class="controls">
+        <div class="controls" [class.open]="isMenuOpen">
             <div class="light-switch" [class.dark]="isDarkMode" (click)="toggleTheme()">
                 <i class="ph ph-sun"></i>
                 <i class="ph ph-moon-stars"></i>

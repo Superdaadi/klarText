@@ -3,6 +3,9 @@
     <p>Loading...</p>
   }
   @else if (data) {
+
+    <p class="date">Datum: {{ data.date }} Uhr</p>
+    
     <!-- Header Section -->
     <div class="header-card card-background">
       <div class="grade-badge" [style.background]="getGradeColor(data.grade)">
@@ -10,6 +13,21 @@
       </div>
       <h1 class="headline">{{ data.headline }}</h1>
       <p class="summary">{{ data.summary }}</p>
+    </div>
+
+    <!-- Text Section -->
+    <div class="section card-background" *ngIf="data.insights.length > 0">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-icon">🗒️</span>
+          Erkannter Text
+        </h2>
+      </div>
+      <div class="insights-list">
+        <div class="insight-card" *ngFor="let insight of data.insights">
+          {{ data.text }}
+        </div>
+      </div>
     </div>
 
     <!-- Score Circle -->

@@ -3,19 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class RecordService {
 
-    private apiUrl = 'http://localhost:8000/process-audio';
-
-  constructor(private http: HttpClient) {}
-
-  sendAudio(audioBlob: Blob): Observable<any> {
-    const formData = new FormData();
-
-    formData.append('file', audioBlob, 'recording.webm');
+    private apiUrl = '/api/process-audio';
     
-    return this.http.post(this.apiUrl, formData);
-  }
+    constructor(private http: HttpClient) {}
+
+    sendAudio(audioBlob: Blob): Observable<any> {
+        const formData = new FormData();
+
+        formData.append('file', audioBlob, 'recording.webm');
+        
+        return this.http.post(this.apiUrl, formData);
+    }
 }

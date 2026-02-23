@@ -14,6 +14,8 @@
     max-width: 1620px;
     padding-top: 8px;
     padding-bottom: 8px;
+    position: relative;
+    z-index: 1000;
 }
 
 .logo{
@@ -109,6 +111,126 @@
     color: white;
 }
 
+
+
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.burger span {
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary-text-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Animation */
+.burger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+
+    .logo i {
+        font-size: 2em;
+    }
+
+    .logo p {
+        font-size: 1.8em;
+    }
+
+    .controls {
+        gap: 8px;
+    }
+
+    .btn {
+        padding: 4px 16px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 20px;
+    }
+
+    .logo {
+        margin-left: 0;
+    }
+
+    .controls {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        background-color: var(--primary-bg-color);
+        padding: 20px 0;
+        border-bottom: 2px solid var(--primary-text-color);
+
+        /* Hidden State */
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .controls.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .light-switch {
+        transform: scale(0.9);
+    }
+
+    .btn {
+        padding: 4px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+
+/*
+@media (max-width: 480px) {
+    .signIn {
+        display: none;
+    }
+}*/
 
 
 

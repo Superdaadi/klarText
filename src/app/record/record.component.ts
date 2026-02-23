@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { AiLoaderComponent } from '../simplify-ai/ai-loader/ai-loader.component';
 import { Router } from '@angular/router';
 import { NgZone } from '@angular/core';
+import { switchMap } from 'rxjs';
 
 
 @Component({
@@ -70,10 +71,34 @@ export class RecordComponent {
       next: (response) => {
         console.log('Backend-Antwort:', response);
         this.showMessage('Erfolgreich verarbeitet!', false);
+
+        try {
+          const key = 'responses';
+          const existingData = localStorage.getItem(key);
+          let responseArray: string[] = existingData ? JSON.parse(existingData) : [];
+
+          // Da response ein String ist, prüfen wir direkt auf den Wert im Array
+          const isDuplicate = responseArray.includes(response);
+
+          if (!isDuplicate) {
+            responseArray.push(response);
+            localStorage.setItem(key, JSON.stringify(responseArray));
+            console.log('ID hinzugefügt');
+          } else {
+            console.warn('ID bereits vorhanden');
+          }
+        } catch (e) {
+          console.error('SessionStorage Error:', e);
+        }
+
         this.isSending = false;
+
+        // 4. Navigation (Vorsicht mit dem 'response' Objekt in der URL!)
         this.ngZone.run(() => {
-          this.router.navigate(['/pronunc-ai-result', response]);
+          // Erzeugt die URL: /pronunc-ai-result/22d165c3...
+          this.router.navigate(['/pronunc-ai-result', response]); 
         });
+
       },
       error: (err) => {
         console.error('Upload-Fehler:', err);

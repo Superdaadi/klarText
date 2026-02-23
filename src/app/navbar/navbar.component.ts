@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID, Renderer2, ElementRef, ViewChild, HostListener } from '@angular/core';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 
@@ -12,6 +12,9 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 export class NavbarComponent {
   public isDarkMode = true;
   private isBrowserEnv = false;
+  protected isMenuOpen = false;
+
+  @ViewChild('navbarWrapper') navbarWrapper!: ElementRef;
 
   constructor(
     private renderer: Renderer2,
@@ -49,5 +52,41 @@ export class NavbarComponent {
       localStorage.setItem('theme', 'light');
     }
   }
+
+  @HostListener('document:click', ['$event'])
+  handleOutsideClick(event: Event) {
+    if (!this.isBrowserEnv || !this.isMenuOpen) return;
+
+    const clickedInside = this.navbarWrapper.nativeElement.contains(event.target);
+
+    if (!clickedInside) {
+      this.closeMenu();
+    }
+  }
+
+  @HostListener('window:scroll')
+  handleScroll() {
+    if (!this.isBrowserEnv || !this.isMenuOpen) return;
+
+    this.closeMenu();
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+    this.renderer.removeClass(this.document.body, 'menu-open');
+  }
+
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+
+    if (this.isMenuOpen) {
+      this.renderer.addClass(this.document.body, 'menu-open');
+    } else {
+      this.renderer.removeClass(this.document.body, 'menu-open');
+    }
+  }
+
+
 
 }

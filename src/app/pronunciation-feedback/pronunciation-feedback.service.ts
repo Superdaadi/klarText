@@ -8,7 +8,7 @@ import { Phoneme, Metadata, PronunciationFeedback } from './pronunciation-feedba
 })
 export class PronunciationService {
 
-    private apiUrl = 'http://localhost:8000/get-audio-results';
+    private apiUrl = 'https://192.168.2.84:8000/get-audio-results';
 
     constructor(private http: HttpClient) {}
 
