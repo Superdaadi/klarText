@@ -55,6 +55,10 @@ export class RecordComponent {
     this.requestMicrophoneAccess();
   }
 
+  protected navToStored() {
+    this.router.navigate(['response-list'])
+  }
+
 
   async sendToBackend() {
     this.isSending = true;

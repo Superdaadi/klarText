@@ -9,7 +9,9 @@
 
 .audio-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .round-btn {
@@ -41,12 +43,6 @@
   color: white;
   cursor: pointer;
 }
-
-
-
-
-
-
 
 
 
@@ -92,7 +88,7 @@
   gap: 24px;
 }
 
-.audio-controls > button {
+.audio-controls > button:not(.toStored) {
   width: 128px;
   height: 128px;
   border: none;
@@ -123,7 +119,7 @@
     opacity 0.25s ease,
     box-shadow 0.2s ease;
 }
-.audio-controls > button:hover {
+.audio-controls > button:hover:not(.toStored) {
   transform: scale(1.02);
   box-shadow: rgba(255, 255, 255, 0.7) 2px 2px 30px;
 }
@@ -150,6 +146,29 @@
 }
 
 
+
+
+
+.audio-controls .toStored {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  position: relative;
+  border: none;
+  background-color: var(--secndry-btn-color);
+  cursor: pointer;
+  margin-top: 16rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid var(--primary-btn-color);
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.toStored:hover {
+  transform: scale(1.02);
+}
 
 
 

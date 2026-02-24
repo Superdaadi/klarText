@@ -29,7 +29,7 @@ export class SimplifyAiComponent {
   ]
 
   open: boolean[] = [false, false, false];
-  selectedLabel: string[] = ['Mittel', 'false', 'detect'];
+  selectedLabel: string[] = ['Mittel', 'Aus', 'Erkennen'];
 
 
   constructor(private aiService: SimplifyAiService) {}
@@ -48,8 +48,8 @@ export class SimplifyAiComponent {
     if (value === 'average') this.selectedLabel[type] = 'Mittel';
     if (value === 'heavy') this.selectedLabel[type] = 'Stark';
 
-    if (value === 'off') this.selectedLabel[type] = 'false';    
-    if (value === 'on') this.selectedLabel[type] = 'true';
+    if (value === 'off') this.selectedLabel[type] = 'Aus';    
+    if (value === 'on') this.selectedLabel[type] = 'An';
 
     if (type === 2) this.selectedLabel[type] = value;
   }
