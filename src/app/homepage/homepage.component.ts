@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,14 +16,18 @@ export class HomepageComponent {
   waveformBars: number[] = [];
   featureWaveformBars: number[] = [];
   
-  constructor(private router: Router) {}
+  constructor(private router: Router, private scroller: ViewportScroller) {}
   
-  public navTo(subUrl: string): void {
+  protected navTo(subUrl: string): void {
     this.router.navigate([subUrl]);
     console.log(subUrl);
   }
 
-  public openPdf(): void {
+  protected scrollTo(destination: string): void {
+    this.scroller.scrollToAnchor(destination);
+  }
+
+  protected openPdf(): void {
     window.open('assets/david_schwendemann-klartext-jufo_arbeit.pdf', '_blank');
   }
   

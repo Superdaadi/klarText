@@ -6,7 +6,7 @@
     class="mic"
   />
   <div class="buttons">
-    <button class="btn-outline" (click)='navTo("response-list")'>
+    <button class="btn-outline" (click)='scrollTo("problem")'>
       Mehr Details ↓
     </button>
     <button class="btn-primary" (click)='navTo("selection")'>
@@ -16,7 +16,7 @@
 </section>
 
 <!-- Das Problem Section -->
-<section class="problem-section">
+<section id="problem" class="problem-section">
   <h2 class="section-title">Das Problem</h2>
   <p class="section-description">
     Sprachbarrieren und komplexe Fachsprache behindern den Zugang zu Informationen und Bildung. In einer globalisierten Welt ist 
@@ -191,7 +191,7 @@
 <section class="klartext-section">
   <h2 class="section-title">klarText - Texte in Leichte Sprache umwandeln</h2>
   <p class="section-description">
-    klarText wandelt komplexe Texte und schwierige Satzstruktureb um und orientiert sich strikt an den Regeln der Leichten Sprache.
+    klarText wandelt komplexe Texte und schwierige Satzstrukturen in Leichte Sprache um und orientiert sich dabei strikt an deren Regeln.
   </p>
   
   <div class="comparison-grid">
@@ -210,7 +210,7 @@
     </div>
     
     <div class="comparison-card output">
-      <h3>VEREINFACHTER TEXT KLARTEXT</h3>
+      <h3>VEREINFACHTER TEXT IN LEICHTER SPRACHE</h3>
       <div class="text-preview">
         <div class="text-line"></div>
         <div class="text-line"></div>
