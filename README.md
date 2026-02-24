@@ -32,8 +32,8 @@ Viele Schülerinnen und Schüler stehen vor der Herausforderung, schwierig auszu
 
 ## 🛠️ Technische Umsetzung
 
-* **Frontend:** Moderne Web-Technologien: Angular (HTML, CSS, JavaScript/TypeScript)
-* **Backend:** API zur Sprachverarbeitung, Node.js Server, (eine Python-Lib)
+* **Frontend:** Moderne Web-Technologien: Angular (HTML, CSS, TypeScript)
+* **Backend:** API zur Sprachverarbeitung, Node.js Server, eine Python-Lib
 * **Sprachmodelle:** Für Textvereinfachung und Ausspracheanalyse
 
 ---
@@ -80,8 +80,8 @@ ng serve
 
 ## 📄 Lizenz
 
-Dieses Projekt steht unter einer Open-Source-Lizenz (konkret einzutragen).
+Dieses Projekt steht unter der GNU GPLv3.
 
 ---
 
-Viel Erfolg beim Präsentieren und Forschen!
+
