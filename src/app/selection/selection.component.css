@@ -1,12 +1,13 @@
+
+
+
 .full-bg {
   display: block;
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 }
-
-
 
 .letter {
   font-size: 156px;
@@ -18,59 +19,16 @@
   z-index: 1;
   position: absolute;
 }
-.La {
-  left: calc(50% - 120px);
-  top: 480px;
-  rotate: 20deg;
-  animation: Lhover 2.5s infinite ease-in-out;
-}
-.Lw {
-  font-size: 200px;
-  left: calc(50% - 690px);
-  top: 200px;
-  rotate: -35deg;
-  animation: Lhover 3.5s infinite ease-in-out;
-}
-.Lt {
-  left: calc(50% - 620px);
-  top: 700px;
-  rotate: 2deg;
-  animation: Lhover 2.5s infinite ease-in-out;
-}
-.Lb {
-  left: calc(50% - 200px);
-  top: 20px;
-  rotate: -8deg;
-  animation: Lhover 2.5s infinite ease-in-out;
-}
-.Lx {
-  font-size: 236px;
-  left: calc(50% - 260px);
-  top: 900px;
-  rotate: 148deg;
-  animation: Lhover 3.5s infinite ease-in-out;
-}
-.Ld {
-  left: calc(50% - 960px);
-  top: 460px;
-  rotate: 60deg;
-  animation: Lhover 2.5s infinite ease-in-out;
-}
-.Lm {
-  left: calc(50% - 1160px);
-  top: 160px;
-  rotate: 130deg;
-  animation: Lhover 3.5s infinite ease-in-out;
-}
-.Lg {
-  left: calc(50% - 1160px);
-  top: 840px;
-  rotate: 20deg;
-  animation: Lhover 2.5s infinite ease-in-out;
-}
 
-
-
+/* --- Desktop (default) --- */
+.La { left: calc(50% - 120px); top: 480px; rotate: 20deg; animation: Lhover 2.5s infinite ease-in-out; }
+.Lw { font-size: 200px; left: calc(50% - 690px); top: 200px; rotate: -35deg; animation: Lhover 3.5s infinite ease-in-out; }
+.Lt { left: calc(50% - 620px); top: 700px; rotate: 2deg; animation: Lhover 2.5s infinite ease-in-out; }
+.Lb { left: calc(50% - 200px); top: 20px; rotate: -8deg; animation: Lhover 2.5s infinite ease-in-out; }
+.Lx { font-size: 236px; left: calc(50% - 260px); top: 900px; rotate: 148deg; animation: Lhover 3.5s infinite ease-in-out; }
+.Ld { left: calc(50% - 960px); top: 460px; rotate: 60deg; animation: Lhover 2.5s infinite ease-in-out; }
+.Lm { left: calc(50% - 1160px); top: 160px; rotate: 130deg; animation: Lhover 3.5s infinite ease-in-out; }
+.Lg { left: calc(50% - 1160px); top: 840px; rotate: 20deg; animation: Lhover 2.5s infinite ease-in-out; }
 
 .circle {
   border-radius: 100%;
@@ -80,108 +38,43 @@
   z-index: 1;
   position: absolute;
 }
-.S1 {
-  width: 120px;
-  height: 120px;
-  left: calc(50% + 120px);
-  top: 480px;
-  rotate: 20deg;
-  animation: Lhover 2.5s infinite ease-in-out;
-}
-.S2 {
-  font-size: 200px;
-  left: calc(50% + 690px);
-  top: 200px;
-  rotate: -35deg;
-  animation: Lhover 3.5s infinite ease-in-out;
-}
-.S3 {
-  width: 180px;
-  height: 180px;
-  left: calc(50% + 520px);
-  top: 660px;
-  rotate: 2deg;
-  animation: Lhover 3.5s infinite ease-in-out;
-}
-.S4 {
-  width: 140px;
-  height: 140px;
-  left: calc(50% + 200px);
-  top: 60px;
-  rotate: -8deg;
-  animation: Lhover 2.5s infinite ease-in-out;
-}
-.S5 {
-  font-size: 236px;
-  left: calc(50% + 260px);
-  top: 900px;
-  rotate: 148deg;
-  animation: Lhover 2.5s infinite ease-in-out;
-}
-.S6 {
-  width: 95px;
-  height: 95px;
-  left: calc(50% + 960px);
-  top: 460px;
-  rotate: 60deg;
-  animation: Lhover 3.5s infinite ease-in-out;
-}
-.S7 {
-  width: 120px;
-  height: 120px;
-  left: calc(50% + 1160px);
-  top: 160px;
-  rotate: 130deg;
-  animation: Lhover 2.5s infinite ease-in-out;
-}
-.S8 {
-  width: 110px;
-  height: 110px;
-  left: calc(50% + 1160px);
-  top: 840px;
-  rotate: 20deg;
-  animation: Lhover 2.5s infinite ease-in-out;
-}
+
+.S1 { width: 120px; height: 120px; left: calc(50% + 120px); top: 480px; animation: Lhover 2.5s infinite ease-in-out; }
+.S2 { left: calc(50% + 690px); top: 200px; animation: Lhover 3.5s infinite ease-in-out; }
+.S3 { width: 180px; height: 180px; left: calc(50% + 520px); top: 660px; animation: Lhover 3.5s infinite ease-in-out; }
+.S4 { width: 140px; height: 140px; left: calc(50% + 200px); top: 60px; animation: Lhover 2.5s infinite ease-in-out; }
+.S5 { left: calc(50% + 260px); top: 900px; animation: Lhover 2.5s infinite ease-in-out; }
+.S6 { width: 95px; height: 95px; left: calc(50% + 960px); top: 460px; animation: Lhover 3.5s infinite ease-in-out; }
+.S7 { width: 120px; height: 120px; left: calc(50% + 1160px); top: 160px; animation: Lhover 2.5s infinite ease-in-out; }
+.S8 { width: 110px; height: 110px; left: calc(50% + 1160px); top: 840px; animation: Lhover 2.5s infinite ease-in-out; }
 
 @keyframes Lhover {
-  0% {
-    transform: translateY(0px) scale(1);
-  }
-  50% {
-    transform: translateY(-10px) scale(1.02);
-  }
-  100% {
-    transform: translateY(0px) scale(1);
-  }
+  0%   { transform: translateY(0px) scale(1); }
+  50%  { transform: translateY(-10px) scale(1.02); }
+  100% { transform: translateY(0px) scale(1); }
 }
 
-
-
-
-
-
-
+/* --- Cards Wrapper --- */
 .cards-wrapper {
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   background: transparent;
+  z-index: 2;
 }
 
-
-/* --- CARDS --- */
 .cards-container {
   width: 100%;
   max-width: 1620px;
   display: flex;
   justify-content: space-evenly;
-  padding-top: 8rem;
+  padding: 8rem 2rem 4rem;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-
-
+/* --- Card --- */
 .card {
   display: flex;
   flex-direction: column;
@@ -193,9 +86,8 @@
   border-radius: 25px;
   z-index: 1;
   overflow: hidden;
-
   position: relative;
-  border: 1.5px solid var(--primary-text-color);
+  border: 1.5px solid var(--primary-text-color, #fff);
   background: linear-gradient(
     166deg,
     rgba(255, 255, 255, 0.20) 0%,
@@ -222,7 +114,6 @@
   z-index: 1;
 }
 
-/* --- CTA Button --- */
 .cta {
   width: calc(100% - 4rem);
   padding: 1rem;
@@ -246,11 +137,142 @@
   transform: translateY(-2px);
 }
 
-
 .noise {
   position: absolute;
   background: none;
   opacity: 0.7;
 }
 
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
 
+/* --- Large tablets / small desktops (max 1200px) --- */
+@media (max-width: 1200px) {
+  .letter { font-size: 110px; }
+  .Lw { font-size: 140px; left: calc(50% - 480px); }
+  .Lx { font-size: 170px; }
+  .Ld { left: calc(50% - 680px); }
+  .Lm { left: calc(50% - 800px); }
+  .Lg { left: calc(50% - 800px); }
+
+  .S2 { left: calc(50% + 480px); }
+  .S3 { left: calc(50% + 360px); }
+  .S6 { left: calc(50% + 680px); }
+  .S7 { left: calc(50% + 800px); }
+  .S8 { left: calc(50% + 800px); }
+
+  .card { width: 440px; height: auto; min-height: 580px; }
+  .card h1 { font-size: 48px; }
+  .card p { font-size: 20px; }
+  .cta { font-size: 22px; }
+
+  .cards-container {
+    padding-top: 4rem;
+  }
+  .card p {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .card {
+    height: 620px;
+  }
+}
+
+
+/* --- Tablets (max 960px) --- */
+@media (max-width: 960px) {
+  .full-bg {
+    min-height: auto;
+  }
+
+  /* Scale down letters significantly */
+  .letter { font-size: 80px; }
+  .Lw { font-size: 100px; left: calc(50% - 340px); top: 140px; }
+  .La { left: calc(50% - 80px); top: 340px; }
+  .Lt { left: calc(50% - 420px); top: 500px; }
+  .Lb { left: calc(50% - 140px); top: 10px; }
+  .Lx { font-size: 120px; left: calc(50% - 180px); top: 660px; }
+  .Ld { left: calc(50% - 500px); top: 320px; }
+  .Lm { left: calc(50% - 580px); top: 100px; }
+  .Lg { left: calc(50% - 580px); top: 600px; }
+
+  /* Scale down circles */
+  .circle { width: 60px; height: 60px; }
+  .S1 { width: 90px; height: 90px; left: calc(50% + 80px); top: 340px; }
+  .S2 { width: 60px; height: 60px; left: calc(50% + 340px); top: 140px; }
+  .S3 { width: 130px; height: 130px; left: calc(50% + 260px); top: 480px; }
+  .S4 { width: 100px; height: 100px; left: calc(50% + 140px); top: 40px; }
+  .S5 { width: 60px; height: 60px; left: calc(50% + 180px); top: 660px; }
+  .S6 { width: 70px; height: 70px; left: calc(50% + 500px); top: 320px; }
+  .S7 { width: 90px; height: 90px; left: calc(50% + 580px); top: 100px; }
+  .S8 { width: 80px; height: 80px; left: calc(50% + 580px); top: 600px; }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+    gap: 2rem;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 520px;
+    height: auto;
+    min-height: 500px;
+  }
+
+  .card h1 { font-size: 40px; }
+  .card p { font-size: 18px; margin-bottom: 4rem; }
+  .cta { font-size: 20px; }
+}
+
+/* --- Mobile (max 600px) --- */
+@media (max-width: 600px) {
+  /* Hide far-off decorative letters on small screens */
+  .Ld, .Lm, .Lg, .S6, .S7, .S8 { display: none; }
+
+  .letter { font-size: 60px; }
+  .Lw { font-size: 75px; left: calc(50% - 240px); top: 100px; }
+  .La { left: calc(50% - 55px); top: 260px; }
+  .Lt { left: calc(50% - 280px); top: 380px; }
+  .Lb { left: calc(50% - 100px); top: 5px; }
+  .Lx { font-size: 90px; left: calc(50% - 130px); top: 500px; }
+
+  .circle { width: 45px; height: 45px; }
+  .S1 { width: 65px; height: 65px; left: calc(50% + 55px); top: 260px; }
+  .S2 { width: 45px; height: 45px; left: calc(50% + 240px); top: 100px; }
+  .S3 { width: 95px; height: 95px; left: calc(50% + 180px); top: 360px; }
+  .S4 { width: 75px; height: 75px; left: calc(50% + 100px); top: 25px; }
+  .S5 { width: 45px; height: 45px; left: calc(50% + 130px); top: 500px; }
+
+  .cards-container {
+    padding-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 18px;
+    min-height: 420px;
+  }
+
+  .card h1 { font-size: 30px; margin-top: 1.5rem; }
+  .card p { font-size: 16px; width: 88%; margin-bottom: 3rem; }
+  .cta { font-size: 18px; padding: 0.8rem; }
+}
+
+/* --- Very small mobile (max 380px) --- */
+@media (max-width: 380px) {
+  .letter { font-size: 48px; }
+  .Lw { font-size: 60px; }
+  .Lx { font-size: 72px; }
+
+  .card h1 { font-size: 26px; }
+  .card p { font-size: 14px; }
+  .cta { font-size: 16px; }
+}

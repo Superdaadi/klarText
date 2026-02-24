@@ -63,11 +63,8 @@ cd klartext
 # Abhängigkeiten installieren
 npm install
 
-# Entwicklungsserver starten
-npm run dev
-
 # Webserver starten
-ng serve --open
+ng serve
 ```
 
 ---

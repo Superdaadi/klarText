@@ -1,0 +1,31 @@
+<!-- response-list.component.html -->
+<div class="response-list-container">
+  <h2>Gespeicherte Responses</h2>
+  
+  <div *ngIf="responses.length === 0" class="empty-state">
+    <p>Keine gespeicherten Responses vorhanden.</p>
+  </div>
+
+  <div class="response-grid">
+    <div 
+      *ngFor="let response of responses; let i = index" 
+      class="response-card"
+      (click)="navigateToResult(response)">
+      <div class="response-header">
+        <span class="response-number">Response #{{ i + 1 }}</span>
+        <button 
+          class="delete-btn" 
+          (click)="deleteResponse(i, $event)"
+          title="Löschen">
+          ×
+        </button>
+      </div>
+      <div class="response-content">
+        <p>{{ getResponsePreview(response) }}</p>
+      </div>
+      <div class="response-footer">
+        <span class="click-hint">Klicken zum Öffnen →</span>
+      </div>
+    </div>
+  </div>
+</div>

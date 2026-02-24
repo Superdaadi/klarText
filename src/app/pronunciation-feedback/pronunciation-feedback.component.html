@@ -1,0 +1,195 @@
+<div class="feedback-container">
+  @if (loading) {
+    <p>Loading...</p>
+  }
+  @else if (data) {
+
+    <p class="date">Datum: {{ data.date }} Uhr</p>
+    
+    <!-- Header Section -->
+    <div class="header-card card-background">
+      <div class="grade-badge" [style.background]="getGradeColor(data.grade)">
+        {{ data.grade }}
+      </div>
+      <h1 class="headline">{{ data.headline }}</h1>
+      <p class="summary">{{ data.summary }}</p>
+    </div>
+
+    <!-- Text Section -->
+    <div class="section card-background" *ngIf="data.insights.length > 0">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-icon">🗒️</span>
+          Erkannter Text
+        </h2>
+      </div>
+      <div class="insights-list">
+        <div class="insight-card" *ngFor="let insight of data.insights">
+          {{ data.text }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Score Circle -->
+    <div class="score-section card-background">
+      <div class="score-circle">
+        <svg viewBox="0 0 200 200" class="circle-svg">
+          <circle
+            cx="100"
+            cy="100"
+            r="85"
+            fill="none"
+            stroke="#e5e7eb"
+            stroke-width="12"
+          />
+          <circle
+            cx="100"
+            cy="100"
+            r="85"
+            fill="none"
+            [attr.stroke]="getScoreColor(data.overall_score)"
+            stroke-width="12"
+            stroke-linecap="round"
+            [attr.stroke-dasharray]="534.07"
+            [attr.stroke-dashoffset]="534.07 - (534.07 * data.overall_score / 100)"
+            transform="rotate(-90 100 100)"
+          />
+        </svg>
+        <div class="score-content">
+          <div class="score-number">{{ data.overall_score }}</div>
+          <div class="score-label">Gesamtpunktzahl</div>
+        </div>
+      </div>
+      <p class="encouragement">{{ data.encouragement }}</p>
+    </div>
+
+    <!-- Distribution Stats -->
+    <div class="stats-grid">
+      <div class="stat-card excellent card-background">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-value">{{ data.metadata.distribution.excellent }}</div>
+        <div class="stat-label">Ausgezeichnet</div>
+      </div>
+      <div class="stat-card good card-background">
+        <div class="stat-icon">👍</div>
+        <div class="stat-value">{{ data.metadata.distribution.good }}</div>
+        <div class="stat-label">Gut</div>
+      </div>
+      <div class="stat-card ok card-background">
+        <div class="stat-icon">👌</div>
+        <div class="stat-value">{{ data.metadata.distribution.ok }}</div>
+        <div class="stat-label">Okay</div>
+      </div>
+      <div class="stat-card needs-work card-background">
+        <div class="stat-icon">📚</div>
+        <div class="stat-value">{{ data.metadata.distribution.needs_work }}</div>
+        <div class="stat-label">Üben</div>
+      </div>
+    </div>
+
+    <!-- Strengths Section -->
+    <div class="section card-background" *ngIf="data.strengths.length > 0">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-icon">💪</span>
+          Deine Stärken
+        </h2>
+      </div>
+      <div class="phoneme-grid">
+        <div class="phoneme-card strength" *ngFor="let item of data.strengths">
+          <div class="phoneme-header">
+            <div class="phoneme-symbol">{{ item.phoneme }}</div>
+            <div class="phoneme-score" [style.color]="getScoreColor(item.score)">
+              {{ item.score }}
+            </div>
+          </div>
+          <div class="phoneme-details">
+            <div class="detail-row">
+              <span class="detail-label">Bewertung:</span>
+              <span class="detail-value badge success">{{ item.label }}</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Konsistenz:</span>
+              <span class="detail-value">{{ item.consistency }}</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Vorkommen:</span>
+              <span class="detail-value">{{ item.count }}×</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weaknesses Section -->
+    <div class="section card-background" *ngIf="data.weaknesses.length > 0">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-icon">🎯</span>
+          Verbesserungspotenzial
+        </h2>
+      </div>
+      <div class="phoneme-list">
+        <div class="phoneme-card weakness" *ngFor="let item of data.weaknesses">
+          <div class="phoneme-header">
+            <div class="phoneme-symbol">{{ item.phoneme }}</div>
+            <div class="phoneme-score" [style.color]="getScoreColor(item.score)">
+              {{ item.score }}
+            </div>
+          </div>
+          <div class="phoneme-details">
+            <div class="detail-row">
+              <span class="detail-label">Schwierigkeit:</span>
+              <span class="detail-value badge warning">{{ getDifficultyBadge(item.difficulty) }}</span>
+            </div>
+            <div class="detail-row" *ngIf="item.consistency">
+              <span class="detail-label">Konsistenz:</span>
+              <span class="detail-value">{{ item.consistency }}%</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Vorkommen:</span>
+              <span class="detail-value">{{ item.count }}×</span>
+            </div>
+          </div>
+          <div class="tip-box" *ngIf="item.tip">
+            <div class="tip-icon">💡</div>
+            <div class="tip-content">
+              <div class="tip-text">{{ item.tip }}</div>
+              <div class="tip-note" *ngIf="item.note">{{ item.note }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Insights Section -->
+    <div class="section card-background" *ngIf="data.insights.length > 0">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-icon">💭</span>
+          Erkenntnisse
+        </h2>
+      </div>
+      <div class="insights-list">
+        <div class="insight-card" *ngFor="let insight of data.insights">
+          {{ insight }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Exercises Section -->
+    <div class="section card-background" *ngIf="data.exercises.length > 0">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-icon">🎓</span>
+          Empfohlene Übungen
+        </h2>
+      </div>
+      <div class="exercises-list">
+        <div class="exercise-card" *ngFor="let exercise of data.exercises">
+          {{ exercise.exercise }}
+        </div>
+      </div>
+    </div>
+  }
+</div>

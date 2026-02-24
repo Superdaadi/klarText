@@ -1,10 +1,18 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { RecordService } from './record.service';
+import { HttpClient } from '@angular/common/http';
+import { AiLoaderComponent } from '../simplify-ai/ai-loader/ai-loader.component';
+import { Router } from '@angular/router';
+import { NgZone } from '@angular/core';
+import { switchMap } from 'rxjs';
+
 
 @Component({
   selector: 'app-record',
   standalone: true,
-  imports: [],
+  imports: [
+    AiLoaderComponent
+  ],
   templateUrl: './record.component.html',
   styleUrl: './record.component.css'
 })
@@ -20,7 +28,6 @@ export class RecordComponent {
   micPermission = false;
   isSoundDetected = false;
   volumeLevel = 0;
-  isSending = false;
   
   message = '';
   isError = false;
@@ -33,14 +40,79 @@ export class RecordComponent {
   
   audioUrl: string | null = null;
 
+  isSending: boolean = false;
+
   
   // Replace with your actual backend endpoint
   private apiUrl = '/api/upload-audio'; 
 
-  constructor(private recordService: RecordService, private cdr: ChangeDetectorRef) {
+  constructor(
+    private recordService: RecordService,
+    private cdr: ChangeDetectorRef,
+    private router: Router,
+    private ngZone: NgZone
+  ) {
     this.requestMicrophoneAccess();
-    console.log()
   }
+
+
+  async sendToBackend() {
+    this.isSending = true;
+    this.cdr.detectChanges();
+
+    if (!this.audioBlob) {
+      this.showMessage('Keine Aufnahme vorhanden', true);
+      return;
+    }
+
+    this.showMessage('Sende an Backend...', false);
+
+    this.recordService.sendAudio(this.audioBlob).subscribe({
+      next: (response) => {
+        console.log('Backend-Antwort:', response);
+        this.showMessage('Erfolgreich verarbeitet!', false);
+
+        try {
+          const key = 'responses';
+          const existingData = localStorage.getItem(key);
+          let responseArray: string[] = existingData ? JSON.parse(existingData) : [];
+
+          // Da response ein String ist, prüfen wir direkt auf den Wert im Array
+          const isDuplicate = responseArray.includes(response);
+
+          if (!isDuplicate) {
+            responseArray.push(response);
+            localStorage.setItem(key, JSON.stringify(responseArray));
+            console.log('ID hinzugefügt');
+          } else {
+            console.warn('ID bereits vorhanden');
+          }
+        } catch (e) {
+          console.error('SessionStorage Error:', e);
+        }
+
+        this.isSending = false;
+
+        // 4. Navigation (Vorsicht mit dem 'response' Objekt in der URL!)
+        this.ngZone.run(() => {
+          // Erzeugt die URL: /pronunc-ai-result/22d165c3...
+          this.router.navigate(['/pronunc-ai-result', response]); 
+        });
+
+      },
+      error: (err) => {
+        console.error('Upload-Fehler:', err);
+        this.showMessage('Fehler beim Senden!', true);
+        this.isSending = false;
+        this.cdr.detectChanges();
+      }
+    });
+  }
+
+
+
+
+
 
   async requestMicrophoneAccess() {
     try {
@@ -190,25 +262,7 @@ export class RecordComponent {
     }
   }
 
-  async sendToBackend() {
-    if (!this.audioBlob) return;
 
-    this.isSending = true;
-    const formData = new FormData();
-    formData.append('audio', this.audioBlob, 'recording.webm');
-
-    /*try {
-      // Passe die URL an dein Backend an
-      const response = await this.http.post('/api/audio/upload', formData).toPromise();
-      this.showMessage('Erfolgreich an Backend gesendet', false);
-      console.log('Backend-Antwort:', response);
-    } catch (error) {
-      this.showMessage('Fehler beim Senden an Backend', true);
-      console.error('Upload-Fehler:', error);
-    } finally {
-      this.isSending = false;
-    }*/
-  }
 
   showMessage(msg: string, error: boolean) {
     this.message = msg;
@@ -232,18 +286,6 @@ export class RecordComponent {
 
 
 
-
-
-
-
-
-
-
-
-  
-  sendAudio() {
-
-  }
 
   resetRecorder() {
     // 1️⃣ MediaRecorder sicher stoppen

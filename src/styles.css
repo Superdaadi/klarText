@@ -17,6 +17,12 @@ body {
     --secondary-bg-color: #e7e7e7;
     
     --primary-text-color: black;
+    --secondary-text-color: #444547;
+    
+    --primary-bg-ani: #dcc8fb16;
+    --secondary-bg-ani: #cfd5f112;
+
+    --blackWhite: white;
 }
 
 body.darkmode {
@@ -27,7 +33,12 @@ body.darkmode {
     --secondary-bg-color: #0F0F0F;
 
     --primary-text-color: white;
+    --secondary-text-color: #bcbec1;
 
+    --primary-bg-ani: #120b1e;
+    --secondary-bg-ani: #02061712;
+    
+    --blackWhite: black;
 }
 
 
@@ -45,38 +56,38 @@ body.darkmode {
 
 
 .boldText {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 /* Tooltip Wort */
 .tooltip-word {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: underline dotted;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: underline dotted;
 }
 
 /* Tooltip Box */
 .tooltip-box {
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #222;
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 1000;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
 }
 
 /* Hover-Effekt */
 .tooltip-word:hover .tooltip-box {
-  opacity: 1;
+    opacity: 1;
 }
 
 

@@ -1,0 +1,16 @@
+{
+  "/api": {
+    "target": "https://192.168.2.84:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  },
+  "/ws": {
+    "target": "https://192.168.2.84:8000",
+    "secure": false,
+    "ws": true
+  }
+}
