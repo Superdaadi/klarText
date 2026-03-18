@@ -1,4 +1,4 @@
-# klarTEXT – Verständlicher sprechen und schreiben
+# klarTEXT – Barrierefreies Lernen
 
 **klarTEXT** ist eine innovative Web-App, die Menschen dabei unterstützt, ihre Aussprache zu optimieren und komplexe Texte automatisch zu vereinfachen. Das Projekt wurde im Rahmen von **Jugend forscht** entwickelt und vereint moderne Webtechnologien mit KI-gestützter Sprachanalyse.
 
