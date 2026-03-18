@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class RecordService {
 
-    private apiUrl = '/api/process-audio';
+    private apiUrl = 'https://localhost:8000/process-audio';
     
     constructor(private http: HttpClient) {}
 
