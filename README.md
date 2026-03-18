@@ -1,55 +1,40 @@
-# klarTEXT – Verständlicher sprechen und schreiben
 
-klerTEXT ist eine Web-App, die Jugendliche dabei unterstützt, ihre Aussprache zu verbessern und komplexe Texte automatisch zu vereinfachen. Das Projekt entstand im Rahmen von **Jugend forscht** und verbindet moderne Webtechnologien mit praktischer Sprachunterstützung.
+# **klarTEXT** ist eine innovative Web-App, die Menschen dabei unterstützt, ihre Aussprache zu optimieren und komplexe Texte automatisch zu vereinfachen. Das Projekt wurde im Rahmen von **Jugend forscht** entwickelt und vereint moderne Webtechnologien mit KI-gestützter Sprachanalyse.
+
+> [!IMPORTANT]
+> **Erforderliches Backend:** Das Frontend benötigt zwingend das passende Backend, um zu funktionieren:  
+> 👉 [klarTEXT Backend auf GitHub](https://github.com/Superdaadi/klarText-Backend)
 
 ---
 
 ## 🎯 Ziel des Projekts
 
-Viele Schülerinnen und Schüler stehen vor der Herausforderung, schwierig auszusprechende Wörter zu üben oder komplizierte Texte zu verstehen. klarTEXT bietet hier eine digitale Unterstützung:
+Viele Menschen – insbesondere Menschen mit Migrationshintergrund oder Sprachbarrieren – stehen vor der Herausforderung, komplexe Texte zu verstehen oder die korrekte Betonung schwieriger Wörter zu meistern. **klarTEXT** bietet hier digitale Unterstützung auf zwei Ebenen:
 
-* **Aussprachehilfe:** Nutzerinnen und Nutzer können Wörter oder Sätze einspeichern, vorlesen lassen und die eigene Aussprache trainieren.
-* **Textvereinfachung:** Komplexe Texte werden auf ein verständliches Sprachniveau umgeschrieben.
-
+* **Aussprachehilfe:** Nutzer können Wörter oder Sätze einsprechen und ihre eigene Aussprache gezielt trainieren.
+* **Textvereinfachung:** Komplexe Inhalte werden automatisch auf ein leicht verständliches Sprachniveau umgeschrieben.
 ---
 
 ## ✨ Kernfunktionen
 
-### 1. Aussprachekorrektur
+### 1. Ausspracheanalyse & Feedback
+* **Audioverarbeitung:** Aufnahme und lokale Verarbeitung von `.wav`-Dateien.
+* **Referenz-Audio:** Wiedergabe der korrekten Aussprache als Vorbild.
+* **Detail-Analyse:** Vergleich der eigenen Stimme mit dem Zielklang inklusive Analyse der Betonung einzelner Laute.
+* **Echtzeit-Feedback:** Sofortige Rückmeldung zur Verbesserung der Sprechweise.
 
-* Audioeingabe und lokale Verarbeitung der .wav Dateien
-* Audio-Ausgabe als Referenz
-* Vergleich der eigenen Stimme mit dem Zielklang und genaustes Analysieren der Betonung verschiedener Laute
-* Feedback in Echtzeit
-
-### 2. Textvereinfachung
-
-* Analyse des eingegebenen Textes
-* Vereinfachte Version in klarer, gut lesbarer Sprache
-* Optional: Hervorhebung schwieriger Stellen
+### 2. Intelligente Textvereinfachung
+* **KI-Analyse:** Deep-Learning-Modelle analysieren die Struktur des eingegebenen Textes.
+* **Leichte Sprache:** Transformation in eine klare, gut lesbare Version.
+* **Fokus:** Optionale Hervorhebung besonders komplexer Satzpassagen oder Begriffe.
 
 ---
 
 ## 🛠️ Technische Umsetzung
 
-* **Frontend:** Moderne Web-Technologien: Angular (HTML, CSS, TypeScript)
-* **Backend:** API zur Sprachverarbeitung, Node.js Server, eine Python-Lib
-* **Sprachmodelle:** Für Textvereinfachung und Ausspracheanalyse
-
----
-
-## 🚀 Motivation
-
-Die Idee entstand aus dem Wunsch, Kommunikation für junge Menschen zugänglicher zu machen. klarTEXT soll den Alltag erleichtern, sei es beim Vorlesen von Präsentationen oder beim Verstehen komplexer Inhalte.
-
----
-
-## ▶️ Verwendung
-
-1. Text oder Wort eingeben
-2. Funktion auswählen (Aussprache / Vereinfachung)
-3. Ergebnis anhören oder lesen
-4. Optional: Üben, speichern, erneut testen
+* **Frontend:** Entwickelt mit **Angular** (HTML, SCSS, TypeScript) für eine reaktive Benutzeroberfläche.
+* **Backend:** Hybride Architektur aus einem **Node.js** Server (API-Management) und einem **Python**-Backend für die KI-Modelle.
+* **Sprachmodelle:** Einsatz moderner LLMs und Speech-to-Text/Text-to-Speech Frameworks zur Analyse und Vereinfachung.
 
 ---
 
@@ -69,12 +54,12 @@ ng serve
 
 ---
 
-## 🧪 Zukunftsideen
+## 🧪 Roadmap & Zukunftsvision
 
-* Persönliche Lernfortschritte speichern
-* Mehrere Schwierigkeitsstufen der Textvereinfachung
-* Mobile App Erweiterung
-* Mehrsprachige Unterstützung
+* Lernhistorie: Speicherung persönlicher Fortschritte zur Langzeitanalyse.
+* Multi-Level-Simplify: Auswahl verschiedener Schwierigkeitsstufen (z. B. "Einfach" vs. "Leichte Sprache").
+* Mobile App: Native Erweiterung für das Training von unterwegs.
+* Multilingualität: Unterstützung weiterer Ausgangssprachen.
 
 ---
 
